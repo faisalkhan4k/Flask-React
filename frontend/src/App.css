@@ -13,10 +13,68 @@
   }
 }
 .bg{
+  display: flex;
   background-color: rgb(0, 105, 137);
-  background-size: 100% 100%;
+  background-size: cover;
+  min-height: 98vh;
+  align-items: center;
+  justify-content: center;
 }
+.login{
+  background-color:skyblue;
+  color:white;
+  border:none;
+  width:11vh;
+  margin: auto;
+  padding:5px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.input{
+  margin: 5px;
+  border-radius:5px;
+  padding:5px;
+  height:20px;
+  
+}
+.emp{
+  color:white;
+  height: 100px;
+  width:100px;
+  background-color:#EE4E4E;
+  border:none;
+  border-radius: 15px;
+  margin:20px
 
+
+}
+.hire{
+  color:white;
+  height: 100px;
+  width:100px;
+  background-color:#799351;
+  border:none;
+  border-radius: 15px;
+  margin:20px
+  
+}
+.emp:hover{
+  transform: scale(1.2);
+  transition: 0.5s;
+  cursor: pointer;
+
+}
+.hire:hover{
+  transform: scale(1.2);
+  transition: 0.5s;
+  cursor: pointer;
+
+}
+.login:hover{
+  background-color: rgb(0, 105, 137);
+  transition:0.2s;
+  
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
