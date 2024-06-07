@@ -31,7 +31,7 @@ const styles = {
     },
     box:{
         width:'400px',
-        height:'25vh',
+        height:'auto',
         backgroundsize:'cover',
         backgroundColor:"rgb(255, 247, 252)",
         boxsizing: "border-box",
