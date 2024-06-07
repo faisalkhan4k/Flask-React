@@ -1,8 +1,34 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { useState } from "react";
+import {auth} from '../../firebaseConfig'
 
 export const Signup = () => {
+    const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  console.log(" nt errrr")
+
+
+const signUpbtn = async(email,password)=>{
+  console.log(" nt errrr")
+const Auth = auth
+  const response = await createUserWithEmailAndPassword(Auth, email, password)
+.then((userCredential) => {
+  // Signed up 
+  console.log(" nt errrr")
+const user = userCredential.user;
+console.log(user)
+// ...
+})
+.catch((error) => {
+  const errorCode = error.code;
+const errorMessage = error.message;
+console.log(errorMessage)
+console.log("errrr")
+// ..
+});
+}
   return (
     <div className="bg">
         <div style={styles.container}>
@@ -12,12 +38,16 @@ export const Signup = () => {
                 <input type="name" className="input" placeholder='Enter your name'/>   
             </div>
             <div className="input">
-                <input type="email" className="input" placeholder='Email'/>   
+                <input type="email" className="input" placeholder='Email' value={email}
+          onChange={(e) => setEmail(e.target.value)}/>   
             </div>
             <div className="input">
-                <input type="password" className="input" placeholder='Password'/>   
+                <input type="password" className="input" placeholder='Password' value={password}
+          onChange={(e) => setPassword(e.target.value)}/>   
             </div>
-            <button className="login">Create Account</button>
+            <button className="login" onClick={()=>signUpbtn(email,password)}>Create Account</button>
+            <button className="signout" onClick={()=>signOut}>signout</button>
+
             <p>Already have an account? <Link to='/Login'> Log In.</Link></p>
         </div>
         </div>
